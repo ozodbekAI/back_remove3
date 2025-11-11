@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Оплата успешно завершена</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j=0;j<document.scripts.length;j++) {
+                if (document.scripts[j].src === r) return;
+            }
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0];
+            k.async=1;k.src=r;a.parentNode.insertBefore(k,a);
+        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(87546909, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+    </script>
+
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104764074', 'ym');
+
+        ym(104764074, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/104764074" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 30px 40px;
+            max-width: 400px;
+        }
+        h1 {
+            color: #16a34a;
+        }
+        p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✅ Оплата успешно завершена!</h1>
+        <p>Спасибо за оплату. Ваш заказ обрабатывается.</p>
+        <p>Вы будете перенаправлены обратно в Telegram-бота через 3 секунды.</p>
+        <a class="btn" id="back-btn" href="#">Вернуться вручную</a>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const user = params.get('user');
+
+        ym(87546909, 'reachGoal', 'visit', { user_id: user });
+        ym(87546909, 'reachGoal', 'success', { user_id: user });
+
+        ym(104764074, 'reachGoal', 'success', { user_id: user });
+
+        const telegramBot = "https://t.me/beautyclientsbot";
+
+        setTimeout(() => {
+            window.location.href = telegramBot;
+        }, 3000);
+
+        // ✋ Qo‘lda qaytish tugmasi
+        document.getElementById("back-btn").href = telegramBot;
+    </script>
+</body>
+</html>
